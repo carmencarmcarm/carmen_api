@@ -1,0 +1,31 @@
+{
+  "name": "carmen_api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf dist && npm run check-style && tsc",
+    "check-style": "eslint src --ext .ts --fix",
+    "release": "npm run build && cp package.json dist/package.json && cd dist && npm install && npm-pack-zip"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.72",
+    "@types/node": "10.17.27",
+    "@typescript-eslint/eslint-plugin": "^4.7.0",
+    "@typescript-eslint/parser": "^4.7.0",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "npm-pack-zip": "^1.2.7",
+    "prettier": "^2.1.2",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.5.0"
+  },
+  "bundleDependencies": [
+    "@aws-sdk/client-ses"
+  ]
+}
